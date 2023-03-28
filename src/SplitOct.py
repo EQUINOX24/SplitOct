@@ -11,8 +11,12 @@
 # v0.8          2022 Jun 29
 # v0.9          2022 Aug 15
 # v0.10         2022 Aug 30
+# v0.11         2023 Mar 28
 
 import sympy as syp
+
+def version():
+    return '0.11'
 
 _o1s, _j1s, _j2s, _j3s, _oIs, _J1s, _J2s, _J3s, = syp.symbols(
     '1 j_1 j_2 j_3 I J_1 J_2 J_3', real=True)
