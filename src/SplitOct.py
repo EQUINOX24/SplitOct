@@ -328,7 +328,7 @@ class SplitOctonion():
     #     # )
     #     return '$' + output + '$'
     
-    def _repr_latex_(self):
+    def _repr_latex_0(self):
         output = str(syp.printing.latex(self[0]))
         for n in range(1, 8):
             output = _append_string(output,
@@ -338,7 +338,7 @@ class SplitOctonion():
             )
         return '$' + output + '$'
     
-    def __repr__(self):
+    def __repr__0(self):
         output = self[0].__repr__()
         output = _append_string(output,
             (self[1]*_j1s + self[2]*_j2s + self[3]*_j3s).__repr__())
@@ -346,6 +346,19 @@ class SplitOctonion():
             (self[4]*_oIs).__repr__())
         output = _append_string(output,
             (self[5]*_J1s + self[6]*_J2s + self[7]*_J3s).__repr__())
+        return output
+    
+    def _repr_latex_(self):
+        return '$' + self.__repr__() + '$'
+    
+    def __repr__(self):
+        output = str(syp.printing.latex(self[0]))
+        for n in range(1, 8):
+            output = _append_string(output,
+                str(syp.printing.latex(
+                    syp.factor(self[n]*_ous[n])
+                ))
+            )
         return output
     
     # def __repr__0(self):
