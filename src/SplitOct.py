@@ -12,11 +12,12 @@
 # v0.9          2022 Aug 15
 # v0.10         2022 Aug 30
 # v0.11         2023 Mar 28
+# v0.12         2023 Mar 30
 
 import sympy as syp
 
 def version():
-    return '0.11'
+    return '0.12'
 
 _o1s, _j1s, _j2s, _j3s, _oIs, _J1s, _J2s, _J3s, = syp.symbols(
     '1 j_1 j_2 j_3 I J_1 J_2 J_3', real=True)
@@ -217,7 +218,7 @@ class SplitOctonion():
                 x[0]*y[6] + x[1]*y[7] + x[2]*y[4] - x[3]*y[5] - x[4]*y[2] + x[5]*y[3] + x[6]*y[0] - x[7]*y[1], # J2     6
                 x[0]*y[7] - x[1]*y[6] + x[2]*y[5] + x[3]*y[4] - x[4]*y[3] - x[5]*y[2] + x[6]*y[1] + x[7]*y[0]  # J3     7
                 
-                # wiki basis
+                # wikipedia basis
                 # x[0]*y[0] - x[1]*y[1] - x[2]*y[2] - x[3]*y[3] + x[4]*y[4] + x[5]*y[5] + x[6]*y[6] + x[7]*y[7], # 1      0
                 # x[0]*y[1] + x[1]*y[0] + x[2]*y[3] - x[3]*y[2] + x[4]*y[5] - x[5]*y[4] + x[6]*y[7] - x[7]*y[6], # j1     1
                 # x[0]*y[2] - x[1]*y[3] + x[2]*y[0] + x[3]*y[1] + x[4]*y[6] - x[5]*y[7] - x[6]*y[4] + x[7]*y[5], # j2     2
@@ -297,37 +298,6 @@ class SplitOctonion():
             other*self[6],
             other*self[7]]).simplify()
     
-    
-    # def _repr_latex_0(self):
-    #     v = self[0] + self[1]*_j1s + self[2]*_j2s + self[3]*_j3s + \
-    #         self[4]*_oIs + self[5]*_J1s + self[6]*_J2s + self[7]*_J3s
-    #     v = syp.expand(v)
-    #     # if self.factor:
-    #     #     v = syp.factor(v)
-    #     # else:
-    #     #     v = syp.simplify(v)
-    #     return '$' + str(syp.printing.latex(v))+'$'
-    
-    # def _repr_latex_(self):
-    #     output = str(syp.printing.latex(self[0]))
-    #     for n in range(1, 8):
-    #         output = _append_string(output,
-    #             str(syp.printing.latex(
-    #                 syp.factor(self[n]*_ous[n])
-    #             ))
-    #         )
-    #     # output = _append_string(output,
-    #     #     str(syp.printing.latex(
-    #     #         syp.expand(self[4]*_oIs)
-    #     #     ))
-    #     # )
-    #     # output = _append_string(output,
-    #     #     str(syp.printing.latex(
-    #     #         syp.expand(self[5]*_J1s + self[6]*_J2s + self[7]*_J3s)
-    #     #     ))
-    #     # )
-    #     return '$' + output + '$'
-    
     def _repr_latex_0(self):
         output = str(syp.printing.latex(self[0]))
         for n in range(1, 8):
@@ -393,3 +363,5 @@ oI = SplitOctonion([0, 0, 0, 0, 1, 0, 0, 0])
 J1 = SplitOctonion([0, 0, 0, 0, 0, 1, 0, 0])
 J2 = SplitOctonion([0, 0, 0, 0, 0, 0, 1, 0])
 J3 = SplitOctonion([0, 0, 0, 0, 0, 0, 0, 1])
+
+ounit = [o1, j1, j2, j3, oI, J1, J2, J3]
