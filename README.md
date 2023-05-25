@@ -10,7 +10,7 @@ To use SplitOct, you need to have SymPy installed as a dependency. SymPy is a Py
 pip install sympy
 ```
 
-After installing SymPy, you can clone the SplitOct repository or download the `SplitOct.py` file from the [GitHub repository](https://github.com/EQUINOX24/SplitOct/blob/master/src/SplitOct.py).
+After installing SymPy, you can clone the SplitOct repository or download the [`SplitOct.py`](https://github.com/EQUINOX24/SplitOct/blob/master/src/SplitOct.py) file from this repository.
 
 ## Usage
 
