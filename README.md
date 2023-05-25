@@ -31,7 +31,7 @@ y = 1 + 10*j1 - 4 *j3 - 5 * oI + J2 # another way
 w = x + y
 print(w)  # Output: 2 + 12 j_{1} + 3 j_{2} + 6 J_{1} + 8 J_{2} + 8 J_{3}
 
-# Division
+# "Division"
 z = x * y.inv()
 print(z)  # Output: \frac{23}{91} + \frac{6 j_{1}}{13} - \frac{5 j_{2}}{91} + \frac{72 j_{3}}{91} - \frac{15 I}{91} + \frac{34 J_{1}}{91} + \frac{125 J_{2}}{91} - \frac{60 J_{3}}{91}
 ```
