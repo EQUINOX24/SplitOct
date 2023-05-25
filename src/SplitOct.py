@@ -13,11 +13,13 @@
 # v0.10         2022 Aug 30
 # v0.11         2023 Mar 28
 # v0.12         2023 Mar 30
+# v0.13         2023 Apr 27
+# v0.14         2023 May 25
 
 import sympy as syp
 
 def version():
-    return '0.12'
+    return '0.14'
 
 _o1s, _j1s, _j2s, _j3s, _oIs, _J1s, _J2s, _J3s, = syp.symbols(
     '1 j_1 j_2 j_3 I J_1 J_2 J_3', real=True)
@@ -107,7 +109,7 @@ class SplitOctonion():
         return self.dot(self)
     
     def inv(self):
-        m = self.modulus()
+        m = self.quadrance()
         if m == 0:
             raise ZeroDivisionError('Division by zero devisor')
         else:
@@ -146,7 +148,16 @@ class SplitOctonion():
            -self.J2(),
            -self.J3()])
     
-
+    def star(self):
+        return SplitOctonion([
+            self.real(),
+            self.j1(),
+            self.j2(),
+            self.j3(),
+           -self.I(),
+           -self.J1(),
+           -self.J2(),
+           -self.J3()])
     
     def __neg__(self):
         return SplitOctonion([
