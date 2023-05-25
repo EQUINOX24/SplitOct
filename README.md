@@ -1,6 +1,6 @@
 # SplitOct
 
-SplitOct is a Python library that provides an implementation of the algebra of split octonions. Split octonions are a variant of octonions, which are an eight-dimensional analog of complex numbers. You can read more about it on [Wikipedia](https://en.wikipedia.org/wiki/Split-octonions). This library allows you to perform various operations on split octonions, such as addition, subtraction, multiplication, and division.
+SplitOct is a Python library that provides an implementation of the algebra of split octonions. Split octonions are a variant of octonions, which are an eight-dimensional analog of complex numbers. You can read more about it on [Wikipedia](https://en.wikipedia.org/wiki/Split-octonions). This library allows you to perform various operations on split octonions, including addition, multiplication, inverse and conjugation for both numeric and symbolic expressions.
 
 ## Installation
 
