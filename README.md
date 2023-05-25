@@ -14,7 +14,7 @@ After installing SymPy, you can clone the SplitOct repository or download the `S
 
 ## Usage
 
-To use SplitOct in your Python code, you need to import the `SplitOct` class from the `SplitOct.py` module. Here's an example of how to import the class:
+It is highly recommended to use SplitOct with [JupyterLab](https://jupyterlab.readthedocs.io/) for an optimal user experience, particularly because JupyterLab can render TeX equations beautifully while displaying them. To use SplitOct in your Python code, you need to import the `SplitOct` class from the `SplitOct.py` module. Here's an example of how to import the class:
 
 ```python
 from SplitOct import *
