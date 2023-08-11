@@ -15,11 +15,12 @@
 # v0.12         2023 Mar 30
 # v0.13         2023 Apr 27
 # v0.14         2023 May 25
+# v0.15         2023 Jun 26
 
 import sympy as syp
 
 def version():
-    return '0.14'
+    return '0.15'
 
 _o1s, _j1s, _j2s, _j3s, _oIs, _J1s, _J2s, _J3s, = syp.symbols(
     '1 j_1 j_2 j_3 I J_1 J_2 J_3', real=True)
@@ -56,6 +57,11 @@ class SplitOctonion():
     def simplify(self):
         for n in range(8):
             self[n] = syp.simplify(self[n])
+        return self
+
+    def expand(self):
+        for n in range(8):
+            self[n] = syp.expand(self[n])
         return self
         
     def real(self):
@@ -341,12 +347,6 @@ class SplitOctonion():
                 ))
             )
         return output
-    
-    # def __repr__0(self):
-    #     return (self[0] + \
-    #             self[1]*_j1s + self[2]*_j2s + self[3]*_j3s + \
-    #             self[4]*_oIs +\
-    #             self[5]*_J1s + self[6]*_J2s + self[7]*_J3s).__repr__()
     
     def __eq__(self, other):
         if type(other) != SplitOctonion:
