@@ -16,11 +16,12 @@
 # v0.13         2023 Apr 27
 # v0.14         2023 May 25
 # v0.15         2023 Jun 26
+# v0.16         2023 Aug 21
 
 import sympy as syp
 
 def version():
-    return '0.15'
+    return '0.16'
 
 _o1s, _j1s, _j2s, _j3s, _oIs, _J1s, _J2s, _J3s, = syp.symbols(
     '1 j_1 j_2 j_3 I J_1 J_2 J_3', real=True)
@@ -349,6 +350,8 @@ class SplitOctonion():
         return output
     
     def __eq__(self, other):
+        if other == None:
+            return False
         if type(other) != SplitOctonion:
             other = SplitOctonion([other, 0, 0, 0, 0, 0, 0, 0])
         for (a, b) in zip(self.x, other.x):
